@@ -18,11 +18,10 @@ from tempfile import template
 
 from django.contrib import admin
 from django.urls import path
-from task2 import views
+from task2.views import func_view, ClassView  # Импортируем представления из task2
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('task2/class/', views.class_based_view, name='class_based_view'),
-    path('task2/function/', views.function_based_view, name='function_based_view'),
+    path('func/', func_view, name='func_view'),  # Маршрут для функционального представления
+    path('class/', ClassView.as_view(), name='class_view'),  # Маршрут для классового представления
 ]
-
