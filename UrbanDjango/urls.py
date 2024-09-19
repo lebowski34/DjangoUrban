@@ -19,7 +19,7 @@ from tempfile import template
 from django.contrib import admin
 from django.urls import path
 from task2.views import func_temp, class_temp
-from task3.views import cart_temp, games_temp, platform_temp
+from task4.views import cart_temp, games_temp, platform_temp, menu
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -28,4 +28,5 @@ urlpatterns = [
     path('platform/', platform_temp.as_view()),
     path('platform/games/', games_temp.as_view()),
     path('platform/cart/', cart_temp.as_view()),
+    path('', menu.as_view(template_name="fourth_task/menu.html")),
 ]
