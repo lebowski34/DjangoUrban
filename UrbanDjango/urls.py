@@ -18,10 +18,14 @@ from tempfile import template
 
 from django.contrib import admin
 from django.urls import path
-from task2.views import func_view, ClassView  # Импортируем представления из task2
+from task2.views import func_temp, class_temp
+from task3.views import cart_temp, games_temp, platform_temp
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('func/', func_view, name='func_view'),  # Маршрут для функционального представления
-    path('class/', ClassView.as_view(), name='class_view'),  # Маршрут для классового представления
+    path('func/', func_temp.as_view(), name='func_temp'),
+    path('class/', class_temp.as_view(), name='class_view'),
+    path('platform/', platform_temp.as_view()),
+    path('platform/games/', games_temp.as_view()),
+    path('platform/cart/', cart_temp.as_view()),
 ]
