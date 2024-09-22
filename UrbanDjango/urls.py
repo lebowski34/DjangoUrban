@@ -24,7 +24,7 @@ from task5.views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('func/', func_temp.as_view(), name='func_temp'),
+    path('func/', func_temp, name='func_temp'),
     path('class/', class_temp.as_view(), name='class_view'),
     path('platform/', platform_temp.as_view()),
     path('platform/games/', games_temp.as_view()),
